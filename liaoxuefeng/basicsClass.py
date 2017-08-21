@@ -37,8 +37,36 @@ print(isinstance(dog, Animal))   # Ture
 def run_twice(animal):
     animal.run()
 
-run_twice(Dog())
-run_twice(Animal())
+# run_twice(Dog())
+# run_twice(Animal())
 
-print(type(123))
-print(type(Animal()))
+# print(type(123))   # <class 'int'>
+# print(type(Animal())) # <class '__main__.Animal'>
+
+
+# print(bart)
+
+
+class StudentTwo(object):
+
+    # def __init__(self, _score):
+    #     self._score = _score
+
+    # def get_score(self):
+    @property
+    def score(self):
+        return self._score
+
+    # def set_score(self, value):
+    @score.setter
+    def score(self, value):
+        if not isinstance(value, int):
+            return ValueError('socre must be an integer!')
+        if value < 0 or value > 100:
+            return ValueError('score must between 0 ~ 100')
+        self._score = value
+
+s = StudentTwo()
+s.score = 40
+print(s.score)
+# print('00')
