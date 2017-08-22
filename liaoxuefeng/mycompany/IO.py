@@ -37,6 +37,10 @@ def B():
     print('y')
     print('z')
 
+B()
+A()
+
+# 消费者
 def consumer():
     r = ''
     while True:
@@ -46,6 +50,7 @@ def consumer():
         print('[CONSUMER] Consuming %s...' % n)
         r = '200 OK'
 
+# 生产者
 def produce(c):
     c.send(None)
     n = 0
